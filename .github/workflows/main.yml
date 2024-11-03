@@ -49,5 +49,5 @@ jobs:
           API_KEY: ${{ secrets.RENDER_API_KEY }}
         run: |
           curl -X POST -H "Authorization: Bearer $API_KEY" \
-          -d '{"serviceId": "srv-csjqqsm8ii6s73d7fjqg/deploys/dep-csjqqsu8ii6s73d7fk90"}' \
+          -d '{"serviceId": "srv-csjqqsm8ii6s73d7fjqg"}' \
           https://api.render.com/deploy

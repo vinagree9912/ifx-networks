@@ -27,4 +27,4 @@ app.include_router(employee.router, tags=["Employees"], prefix="/api/employees")
 
 @app.get("/api/healthchecker")
 def root():
-    return {"message": "Welcome to FastAPI with MongoDB"}
+    return {"message": "Welcome to IFX-NETWORK management"}

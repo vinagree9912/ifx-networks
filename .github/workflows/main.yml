@@ -1,0 +1,53 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+concurrency:
+  group: deploy-master
+  cancel-in-progress: true  # Cancela cualquier ejecución anterior si una nueva ejecución es activada en `master`
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    # Estrategia de matriz para probar en diferentes versiones de Python
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10']  # Define múltiples versiones de Python para ejecutar
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}  # Usa la versión de Python definida en la matriz
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # En caso de Pull Request, ejecuta solo las pruebas sin desplegar
+      - name: Run Tests
+        if: github.event_name == 'pull_request'
+        run: |
+          # Aquí puedes agregar comandos para correr tus pruebas
+          pytest --maxfail=1 --disable-warnings
+
+      # Despliega en Render solo si es un push a la rama master, no en PRs
+      - name: Deploy to Render
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        env:
+          API_KEY: ${{ secrets.RENDER_API_KEY }}
+        run: |
+          curl -X POST -H "Authorization: Bearer $API_KEY" \
+          -d '{"serviceId": "srv-csjqqsm8ii6s73d7fjqg/deploys/dep-csjqqsu8ii6s73d7fk90"}' \
+          https://api.render.com/deploy

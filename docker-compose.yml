@@ -1,19 +1,5 @@
 version: '3'
 services:
-  mongo:
-    image: mongo:latest
-    container_name: mongo
-    env_file:
-      - .env
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
-      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
-    volumes:
-      - mongo:/data/db
-    ports:
-      - '27017:27017'
-
   app:
     build:
       context: ./app  # Ruta hacia el backend (FastAPI)
@@ -22,11 +8,6 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: ${DATABASE_URL}  # URL para conectar a Mongo
-    depends_on:
-      - mongo
+      DATABASE_URL: ${DATABASE_URL}  # URL para conectar a MongoDB Atlas
     ports:
       - '8000:8000'  # Expone el servicio FastAPI en el puerto 8000
-
-volumes:
-  mongo:

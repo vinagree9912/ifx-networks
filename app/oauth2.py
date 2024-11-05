@@ -7,7 +7,7 @@ from bson.objectid import ObjectId
 
 from app.serializers.userSerializers import userEntity
 
-from .database import User
+from app.database import User
 from .config import settings
 
 

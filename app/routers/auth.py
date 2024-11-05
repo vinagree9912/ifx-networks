@@ -5,12 +5,11 @@ from bson.objectid import ObjectId
 from fastapi import APIRouter, Request, Response, status, Depends, HTTPException
 from pydantic import EmailStr
 
-from app import oauth2
 from app.database import User
-from app.email import Email
-from app.serializers.userSerializers import userEntity
-from .. import schemas, utils
-from app.oauth2 import AuthJWT
+from ..email_utils import Email
+from ..serializers.userSerializers import userEntity
+from .. import schemas, utils, oauth2
+from ..oauth2 import AuthJWT
 from ..config import settings
 
 

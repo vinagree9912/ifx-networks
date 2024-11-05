@@ -9,6 +9,7 @@ app = FastAPI()
 
 origins = [
     settings.CLIENT_ORIGIN,
+    "https://ifx-networks-1.onrender.com"
 ]
 
 app.add_middleware(

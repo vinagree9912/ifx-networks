@@ -11,7 +11,7 @@ const Dashboard = () => {
   const handleLogout = () => {
     const token = localStorage.getItem("accessToken");
     axios.defaults.withCredentials = true;
-    axios.get('https://ifx-networks.onrender.com/api/auth/logout', {
+    axios.get('https://ifx-networks-1.onrender.com/api/auth/logout', {
       headers: {
         Authorization: `Bearer ${token}`
       }

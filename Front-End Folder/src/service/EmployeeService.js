@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Definimos la URL base de la API
-const BASE_URL = 'https://ifx-networks.onrender.com/api/employees';
+const BASE_URL = 'https://ifx-networks-1.onrender.com/api/employees';
 
 const EmployeeService = {
   // Obtener todos los empleados (accesible para usuarios con y sin token)

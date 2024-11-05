@@ -9,7 +9,7 @@ const Logout = () => {
     const handleLogout = async () => {
       try {
         // Call the logout endpoint
-        await axios.get("https://ifx-networks.onrender.com/logout", { withCredentials: true });
+        await axios.get("https://ifx-networks-1.onrender.com/logout", { withCredentials: true });
 
         // Optionally clear any client-side stored authentication state (e.g., in localStorage or context)
         // localStorage.removeItem("authToken");

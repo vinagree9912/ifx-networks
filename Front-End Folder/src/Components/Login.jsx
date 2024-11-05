@@ -20,7 +20,7 @@ const Login = () => {
         setLoading(true); // Start loading
 
         // Send POST request to backend for login
-        axios.post('https://ifx-networks.onrender.com/api/auth/login', values, { withCredentials: true })
+        axios.post('https://ifx-networks-1.onrender.com/api/auth/login', values, { withCredentials: true })
             .then(response => {
                 if (response.data.status === 'success') {
                      localStorage.setItem("accessToken", response.data.access_token);

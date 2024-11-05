@@ -36,7 +36,7 @@ const Register = () => {
 
     try {
       // Send a POST request to the /api/auth/login endpoint
-      const response = await axios.post("https://ifx-networks.onrender.com/api/auth/register", formData);
+      const response = await axios.post("https://ifx-networks-1.onrender.com/api/auth/register", formData);
 
       // Check if the registration was successful
       if (response.data.status === "success") {

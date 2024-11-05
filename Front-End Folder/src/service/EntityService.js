@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Definimos la URL base de la API para entidades
-const BASE_URL = 'https://ifx-networks.onrender.com/api/entities';
+const BASE_URL = 'https://ifx-networks-1.onrender.com/api/entities';
 
 const EntityService = {
   // Obtener todas las entidades (accesible para usuarios con y sin token)

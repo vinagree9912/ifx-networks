@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - 'Front-End Folder/**'  # Ignora cambios en la carpeta del frontend
   pull_request:
     branches:
       - master
+    paths-ignore:
+      - 'Front-End Folder/**'  # Ignora cambios en la carpeta del frontend también en pull requests
 
 concurrency:
   group: deploy-master

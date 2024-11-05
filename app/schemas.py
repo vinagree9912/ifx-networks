@@ -112,7 +112,7 @@ class CreateEmployeeSchema(BaseModel):
     name: str
     email: EmailStr
     position: Optional[str] = None
-    entity_id: Optional[str]  # Cambiado de ObjectId a str para facilitar JSON
+    entity_id: Optional[str]
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 

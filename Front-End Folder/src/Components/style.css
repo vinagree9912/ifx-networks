@@ -1,0 +1,55 @@
+/* Estilo del fondo de la página */
+.loginPage {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('Images/bg-pilar.jpg');
+    background-position: top right; /* Ubicación en la esquina superior derecha */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo del contenedor de login */
+.loginForm {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    width: 100%;
+    max-width: 350px; /* Ancho máximo para adaptarse a pantallas más pequeñas */
+    text-align: center;
+}
+
+/* Título de Login */
+.loginForm h2 {
+    font-size: 24px;
+    color: #333; /* Color de texto oscuro */
+    margin-bottom: 20px;
+}
+
+/* Botones de Login */
+.loginForm .btn {
+    width: 45%;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.loginForm .btn-primary {
+    background-color: #007bff; /* Color azul para el botón Employee */
+    border: none;
+}
+
+.loginForm .btn-primary:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+.loginForm .btn-success {
+    background-color: #28a745; /* Verde para el botón Admin */
+    border: none;
+}
+
+.loginForm .btn-success:hover {
+    background-color: #1e7e34; /* Verde más oscuro al pasar el mouse */
+}

@@ -15,11 +15,7 @@ Este proyecto es una aplicación web completa que utiliza **FastAPI** en el back
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Configuración del Entorno de Desarrollo](#configuración-del-entorno-de-desarrollo)
-- [Despliegue](#despliegue)
 - [Variables de Entorno](#variables-de-entorno)
-- [Rutas de la API](#rutas-de-la-api)
-- [Licencia](#licencia)
-
 ---
 
 ## Características

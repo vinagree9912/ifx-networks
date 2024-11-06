@@ -49,9 +49,5 @@ jobs:
       # Despliega en Render solo si es un push a la rama master, no en PRs
       - name: Deploy to Render
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env:
-          API_KEY: ${{ secrets.RENDER_API_KEY }}
         run: |
-          curl -X POST -H "Authorization: Bearer $API_KEY" \
-          -d '{"serviceId": "srv-csl908t6l47c73e7m46g"}' \
-          https://api.render.com/deploy
+          curl -X POST https://api.render.com/deploy/srv-csl908t6l47c73e7m46g?key=VOJNuhWNP14
